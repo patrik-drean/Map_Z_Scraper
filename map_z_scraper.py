@@ -1,9 +1,13 @@
+import time, re
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
-import time
+from stopwatch import Timer
 
+timer = Timer()
+timer.start()
 # Open firefox browser
 driver = webdriver.Firefox()
 
@@ -21,11 +25,10 @@ signin_button.click()
 # Prompt for login info
 # username = input('Enter username:')
 # password = input('Enter password:')
-time.sleep(4)
+WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'IDToken1')))
 username = 'pdrean4'
 password = 'Lnephite44'
 
-time.sleep(1)
 
 # Grab inputs
 username_input = driver.find_element_by_name("IDToken1")
@@ -42,8 +45,7 @@ password_input.send_keys(password)
 username_input.submit()
 
 # Wait for browser to refresh
-WebDriverWait(driver, 10).until(EC.title_contains("The Church"))
-time.sleep(5)
+WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'pf-signin')))
 
 # Navigate to directory
 account_button = driver.find_element_by_xpath("//*[contains(text(), 'My Account')]")
@@ -52,33 +54,88 @@ account_button.click()
 directory_button = driver.find_element_by_xpath("//*[contains(text(), 'Directory')]")
 directory_button.click()
 
-## Grab information and put into list
-time.sleep(3)
-people = []
+## Grab information and put into dictionary
+households = {}
 counter1 = 0
-household_link = not None
+household_link = WebDriverWait(driver, 10).until(EC.presence_of_element_located((
+    By.ID, 'listItem0')))
 
 while(household_link):
     # Grab next household link based on counter
     household_id = 'listItem' + str(counter1)
     try:
-        household_link = driver.find_element_by_id(household_id)
-        print(household_link)
+        # Grab link and household name
+        household_link = driver.find_element_by_id(household_id) \
+            .find_element_by_tag_name('a')
+        household_name = household_link.text
+
+        # Click into household
+        household_link.click()
+
+        # Wait for ajox to load then assign to element
+        element = WebDriverWait(driver, 40).until(
+            EC.presence_of_element_located((By.ID, 'householdAddress'))
+            )
+
+        # Grab household address
+        household_address_spans = element.find_elements_by_tag_name('span')
+
+        # Change final_pos if household is the logged in user
+        # TODO
+        try:
+             driver.find_element_by_id("show_profile_edit")
+             final_pos = 1
+
+        except NoSuchElementException:
+            final_pos = (len(household_address_spans) - 1)
+
+        i = 0
+        household_street_address = ''
+        household_city = ''
+        household_zip = ''
+
+        # Loop to grab the street address
+        while(i < final_pos):
+            household_street_address += ' {}'.format(household_address_spans[i].text)
+            i += 1
+
+        # Grab city
+        household_city = household_address_spans[final_pos].text.split(',')[0]
+
+        # Grab zip
+        household_zip = re.search(
+            r'(\d{5})',
+            household_address_spans[final_pos].text
+            )
+        if household_zip:
+            household_zip = household_zip.group(0)
+        else:
+            household_zip = '84606'
+
+        # Add to dictionary
+        households[household_name] = (
+            household_street_address.strip(),
+            household_city,
+            household_zip)
+
+        print()
+        print(household_name)
+        print(household_street_address.strip())
+        print(household_city)
+        print(household_zip)
+
+    # Output when finished
     except NoSuchElementException:
-        print("Finished compiling each household.")
+        print("\nFinished compiling each household.")
         household_link = None
+        print(timer.stop())
 
     # Increment
     counter1 += 1
 
-# Quite process
+
+print(households)
+
+# Quit process
 input()
 driver.quit()
-
-
-
-# content = request.urlopen(url).read()
-#
-# soup = BeautifulSoup(content)
-#
-# print (soup)
