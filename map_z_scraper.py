@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
 from lib.stopwatch import Timer
 from pyexcel.cookbook import merge_all_to_a_book
-import pyexcel.ext.xlsx # needed to support xlsx format, pip install pyexcel-xlsx
+
 
 
 ##################### Web scrape website #####################
@@ -88,8 +88,8 @@ while(household_link):
         # Change final_pos if household is the logged in user
         # TODO
         try:
-             driver.find_element_by_id("show_profile_edit")
-             final_pos = (len(household_address_spans) - 3)
+            driver.find_element_by_id("show_profile_edit")
+            final_pos = (len(household_address_spans) - 2)
 
          # Assign for all other households
         except NoSuchElementException:
@@ -120,16 +120,16 @@ while(household_link):
 
         # Add to dictionary
         households[household_name] = (
-            household_street_address.strip(),
+            household_street_address.replace(".", "").strip(),
             household_city,
             household_zip)
 
         # Show progress of homes
-        print()
-        print(household_name)
-        print(household_street_address.strip())
-        print(household_city)
-        print(household_zip)
+        for key, value in households.items():
+            print('\n{}'.format(key))
+            print(value[0])
+            print(value[1])
+            print(value[2])
 
     # Output when finished
     except NoSuchElementException:
@@ -142,7 +142,7 @@ while(household_link):
 
 ## Write to csv file
 with open('data/map_data_backup.csv', 'w', newline='') as csvfile:
-    fieldnames = ['Name', 'Street', 'City', 'State', 'Country', 'Zipcode']
+    fieldnames = ['Name', 'Street', 'City', 'Country', 'Zipcode']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
 
@@ -151,12 +151,11 @@ with open('data/map_data_backup.csv', 'w', newline='') as csvfile:
             'Name': key,
             'Street': value[0],
             'City': value[1],
-            'State': 'UT',
             'Country': 'United States',
             'Zipcode': value[2]
             })
 
-merge_all_to_a_book(glob.glob("data/map_data.csv"), "data/map_data.xlsx")
+merge_all_to_a_book(glob.glob("data/map_data_backup.csv"), "data/map_data.xlsx")
 
 ##################### Compare map excel file #####################
 

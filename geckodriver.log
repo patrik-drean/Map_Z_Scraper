@@ -1887,3 +1887,130 @@ See /usr/include/servers/bootstrap_defs.h for the error codes.
 JavaScript error: https://edge.ldscdn.org/cdn2/csp/ldsorg/script/common/lds.js, line 10: ReferenceError: $ is not defined
 JavaScript error: https://ident.lds.org/sso/scripts/page.js?v=0b4e07, line 9: ReferenceError: $ is not defined
 JavaScript error: https://edge.ldscdn.org/cdn2/csp/ldsorg/script/common/lds.js, line 10: ReferenceError: $ is not defined
+1524838894942	geckodriver	INFO	geckodriver 0.20.1
+1524838895048	geckodriver	INFO	Listening on 127.0.0.1:51353
+1524838895972	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/yd/_r5zqd3n3vlbbw9hlxgsjt5m0000gn/T/rust_mozprofile.Rg64MX833UmD"
+1524838896666	Marionette	INFO	Enabled via --marionette
+2018-04-27 08:21:38.015 plugin-container[41776:14397816] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8907, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1524838898692	Marionette	INFO	Listening on port 51364
+1524838898784	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-04-27 08:21:38.928 plugin-container[41778:14397910] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8707, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: https://edge.ldscdn.org/cdn2/csp/ldsorg/script/common/lds.js, line 10: ReferenceError: $ is not defined
+JavaScript error: https://edge.ldscdn.org/cdn2/csp/ldsorg/script/common/lds.js, line 10: ReferenceError: $ is not defined
+1524839270946	geckodriver	INFO	geckodriver 0.20.1
+1524839271035	geckodriver	INFO	Listening on 127.0.0.1:53713
+1524839272013	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/yd/_r5zqd3n3vlbbw9hlxgsjt5m0000gn/T/rust_mozprofile.iAtqaqXDHP6Y"
+1524839272696	Marionette	INFO	Enabled via --marionette
+2018-04-27 08:27:53.748 plugin-container[42055:14405780] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x803f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1524839274544	Marionette	INFO	Listening on port 53724
+1524839274616	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-04-27 08:27:55.244 plugin-container[42056:14405884] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7f03, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: https://edge.ldscdn.org/cdn2/csp/ldsorg/script/common/lds.js, line 10: ReferenceError: $ is not defined
+JavaScript error: https://edge.ldscdn.org/cdn2/csp/ldsorg/script/common/lds.js, line 10: ReferenceError: $ is not defined
+1524839365174	geckodriver	INFO	geckodriver 0.20.1
+1524839365245	geckodriver	INFO	Listening on 127.0.0.1:53993
+1524839366207	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/yd/_r5zqd3n3vlbbw9hlxgsjt5m0000gn/T/rust_mozprofile.yPp7nyf2itD4"
+1524839366860	Marionette	INFO	Enabled via --marionette
+2018-04-27 08:29:27.878 plugin-container[42121:14407861] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7743, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1524839368440	Marionette	INFO	Listening on port 54006
+1524839368516	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-04-27 08:29:29.045 plugin-container[42122:14407970] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8607, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: https://edge.ldscdn.org/cdn2/csp/ldsorg/script/common/lds.js, line 10: ReferenceError: $ is not defined
+JavaScript error: https://edge.ldscdn.org/cdn2/csp/ldsorg/script/common/lds.js, line 10: ReferenceError: $ is not defined
+1524839517837	geckodriver	INFO	geckodriver 0.20.1
+1524839517903	geckodriver	INFO	Listening on 127.0.0.1:54422
+1524839518869	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/yd/_r5zqd3n3vlbbw9hlxgsjt5m0000gn/T/rust_mozprofile.uejPzbytcpCk"
+1524839519582	Marionette	INFO	Enabled via --marionette
+2018-04-27 08:32:00.928 plugin-container[42218:14410748] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7d0b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1524839521732	Marionette	INFO	Listening on port 54433
+1524839521750	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-04-27 08:32:02.631 plugin-container[42220:14410894] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8407, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: https://edge.ldscdn.org/cdn2/csp/ldsorg/script/common/lds.js, line 10: ReferenceError: $ is not defined
+JavaScript error: https://edge.ldscdn.org/cdn2/csp/ldsorg/script/common/lds.js, line 10: ReferenceError: $ is not defined
+1524840381115	geckodriver	INFO	geckodriver 0.20.1
+1524840381198	geckodriver	INFO	Listening on 127.0.0.1:55443
+1524840382145	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/yd/_r5zqd3n3vlbbw9hlxgsjt5m0000gn/T/rust_mozprofile.bxhsOiKAqO1T"
+1524840383174	Marionette	INFO	Enabled via --marionette
+2018-04-27 08:46:24.410 plugin-container[42613:14421094] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7b43, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1524840384972	Marionette	INFO	Listening on port 55456
+1524840385038	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-04-27 08:46:25.556 plugin-container[42615:14421185] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x793f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: https://edge.ldscdn.org/cdn2/csp/ldsorg/script/common/lds.js, line 10: ReferenceError: $ is not defined
+JavaScript error: https://edge.ldscdn.org/cdn2/csp/ldsorg/script/common/lds.js, line 10: ReferenceError: $ is not defined
+1524840879496	geckodriver	INFO	geckodriver 0.20.1
+1524840879582	geckodriver	INFO	Listening on 127.0.0.1:58248
+1524840880524	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/yd/_r5zqd3n3vlbbw9hlxgsjt5m0000gn/T/rust_mozprofile.3u9fEEVa7CUT"
+1524840881462	Marionette	INFO	Enabled via --marionette
+2018-04-27 08:54:42.969 plugin-container[42968:14429829] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x793f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-04-27 08:54:43.844 plugin-container[42970:14429927] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8203, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1524840884016	Marionette	INFO	Listening on port 58260
+1524840884204	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://edge.ldscdn.org/cdn2/csp/ldsorg/script/common/lds.js, line 10: ReferenceError: $ is not defined
+JavaScript error: https://assets.adobedtm.com/05c94072b1046aef0dc9b195809b4d2429a0d30a/scripts/satellite-569421e764746d270a00ea5e.js, line 5: ReferenceError: aaPluginConfig is not defined
+JavaScript error: https://assets.adobedtm.com/05c94072b1046aef0dc9b195809b4d2429a0d30a/scripts/satellite-569421e764746d270a00ea5f.js, line 4: ReferenceError: aaPluginConfig is not defined
+JavaScript error: https://ident.lds.org/sso/scripts/page.js?v=0b4e07, line 9: ReferenceError: $ is not defined
+JavaScript error: https://edge.ldscdn.org/cdn2/csp/ldsorg/script/common/lds.js, line 10: ReferenceError: $ is not defined
+1524853339687	geckodriver	INFO	geckodriver 0.20.1
+1524853339768	geckodriver	INFO	Listening on 127.0.0.1:60254
+1524853340718	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/yd/_r5zqd3n3vlbbw9hlxgsjt5m0000gn/T/rust_mozprofile.J80RfP10SU4E"
+1524853341582	Marionette	INFO	Enabled via --marionette
+2018-04-27 12:22:22.890 plugin-container[43545:14449708] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8507, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1524853343472	Marionette	INFO	Listening on port 60267
+1524853343540	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-04-27 12:22:25.323 plugin-container[43549:14449824] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8503, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: https://edge.ldscdn.org/cdn2/csp/ldsorg/script/common/lds.js, line 10: ReferenceError: $ is not defined
+JavaScript error: https://edge.ldscdn.org/cdn2/csp/ldsorg/script/common/lds.js, line 10: ReferenceError: $ is not defined
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1524853394267	geckodriver	INFO	geckodriver 0.20.1
+1524853394369	geckodriver	INFO	Listening on 127.0.0.1:60513
+1524853395306	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/yd/_r5zqd3n3vlbbw9hlxgsjt5m0000gn/T/rust_mozprofile.y6hNL7csegkW"
+1524853395898	Marionette	INFO	Enabled via --marionette
+2018-04-27 12:23:17.048 plugin-container[43597:14451145] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8043, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1524853397658	Marionette	INFO	Listening on port 60527
+1524853397742	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-04-27 12:23:18.296 plugin-container[43599:14451236] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7803, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: https://edge.ldscdn.org/cdn2/csp/ldsorg/script/common/lds.js, line 10: ReferenceError: $ is not defined
+JavaScript error: https://edge.ldscdn.org/cdn2/csp/ldsorg/script/common/lds.js, line 10: ReferenceError: $ is not defined
+1524853509141	geckodriver	INFO	geckodriver 0.20.1
+1524853509207	geckodriver	INFO	Listening on 127.0.0.1:61395
+1524853510169	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/yd/_r5zqd3n3vlbbw9hlxgsjt5m0000gn/T/rust_mozprofile.2gFj2Bl5ovXf"
+1524853510754	Marionette	INFO	Enabled via --marionette
+2018-04-27 12:25:11.930 plugin-container[43680:14454062] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8243, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1524853512410	Marionette	INFO	Listening on port 61406
+1524853512494	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-04-27 12:25:13.284 plugin-container[43681:14454152] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x853f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: https://edge.ldscdn.org/cdn2/csp/ldsorg/script/common/lds.js, line 10: ReferenceError: $ is not defined
+JavaScript error: https://assets.adobedtm.com/05c94072b1046aef0dc9b195809b4d2429a0d30a/scripts/satellite-5693ec1d64746d5f90006ba2.js, line 4: ReferenceError: ADB is not defined
+JavaScript error: https://assets.adobedtm.com/05c94072b1046aef0dc9b195809b4d2429a0d30a/scripts/satellite-569421e764746d270a00ea5e.js, line 5: TypeError: aaPluginConfig is undefined
+JavaScript error: https://assets.adobedtm.com/05c94072b1046aef0dc9b195809b4d2429a0d30a/scripts/satellite-569421e764746d270a00ea5f.js, line 4: TypeError: aaPluginConfig is undefined
+JavaScript error: https://edge.ldscdn.org/cdn2/csp/ldsorg/script/common/lds.js, line 10: ReferenceError: $ is not defined
+1524854569847	geckodriver	INFO	geckodriver 0.20.1
+1524854569915	geckodriver	INFO	Listening on 127.0.0.1:65497
+1524854570884	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/yd/_r5zqd3n3vlbbw9hlxgsjt5m0000gn/T/rust_mozprofile.ozNg7dHfA9bm"
+1524854571520	Marionette	INFO	Enabled via --marionette
+2018-04-27 12:42:52.766 plugin-container[44836:14477412] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8543, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-04-27 12:42:53.516 plugin-container[44837:14477486] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7907, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1524854573550	Marionette	INFO	Listening on port 65508
+1524854573576	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://edge.ldscdn.org/cdn2/csp/ldsorg/script/common/lds.js, line 10: ReferenceError: $ is not defined
+JavaScript error: https://edge.ldscdn.org/cdn2/csp/ldsorg/script/common/lds.js, line 10: ReferenceError: $ is not defined
