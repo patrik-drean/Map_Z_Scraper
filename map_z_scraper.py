@@ -1,10 +1,15 @@
-import time, re
+import time, re, csv, glob
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
-from stopwatch import Timer
+from lib.stopwatch import Timer
+from pyexcel.cookbook import merge_all_to_a_book
+import pyexcel.ext.xlsx # needed to support xlsx format, pip install pyexcel-xlsx
+
+
+##################### Web scrape website #####################
 
 timer = Timer()
 timer.start()
@@ -84,8 +89,9 @@ while(household_link):
         # TODO
         try:
              driver.find_element_by_id("show_profile_edit")
-             final_pos = 1
+             final_pos = (len(household_address_spans) - 3)
 
+         # Assign for all other households
         except NoSuchElementException:
             final_pos = (len(household_address_spans) - 1)
 
@@ -118,6 +124,7 @@ while(household_link):
             household_city,
             household_zip)
 
+        # Show progress of homes
         print()
         print(household_name)
         print(household_street_address.strip())
@@ -128,13 +135,33 @@ while(household_link):
     except NoSuchElementException:
         print("\nFinished compiling each household.")
         household_link = None
-        print(timer.stop())
+        print(timer.stop(message = 'Time Elapsed: '))
 
     # Increment
     counter1 += 1
 
+## Write to csv file
+with open('data/map_data_backup.csv', 'w', newline='') as csvfile:
+    fieldnames = ['Name', 'Street', 'City', 'State', 'Country', 'Zipcode']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    writer.writeheader()
 
-print(households)
+    for key, value in households.items():
+        writer.writerow({
+            'Name': key,
+            'Street': value[0],
+            'City': value[1],
+            'State': 'UT',
+            'Country': 'United States',
+            'Zipcode': value[2]
+            })
+
+merge_all_to_a_book(glob.glob("data/map_data.csv"), "data/map_data.xlsx")
+
+##################### Compare map excel file #####################
+
+
+##################### Upload to Zeemaps #####################
 
 # Quit process
 input()
