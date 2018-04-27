@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
 from lib.stopwatch import Timer
 from pyexcel.cookbook import merge_all_to_a_book
-
+from openpyxl import load_workbook
 
 
 ##################### Web scrape website #####################
@@ -146,6 +146,7 @@ with open('data/map_data_backup.csv', 'w', newline='') as csvfile:
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
 
+    # Write each household to individual rows
     for key, value in households.items():
         writer.writerow({
             'Name': key,
@@ -157,8 +158,53 @@ with open('data/map_data_backup.csv', 'w', newline='') as csvfile:
 
 merge_all_to_a_book(glob.glob("data/map_data_backup.csv"), "data/map_data.xlsx")
 
-##################### Compare map excel file #####################
+##################### Compare map excel file data #####################
+current_households = {}
+misc_households = {}
+upload_households = {}
+delete_households = {}
 
+## Load up current household information
+wb = load_workbook(filename='data/current_map_data.xlsx', read_only=True)
+ws = wb['compiled_data_1.2']
+
+for index, row in enumerate(ws.rows):
+    # Skip header info
+    if (index != 0):
+        # Add to the normal list if a normal member
+        if row[6].value == 'Less Active Member' or \
+            row[6].value == 'Active Member' or \
+            row[6].value == 'Part Member Family':
+
+            current_households[row[1].value] = (
+                row[2].value,
+                row[3].value,
+                row[4].value,
+                row[5].value,
+                row[6].value,
+                row[7].value,
+                row[0].value,
+                )
+            print(current_households[row[1].value])
+        # Put other households in a misc list that will be added to the upload dict at the end
+        else:
+            misc_households[row[1].value] = (
+                row[2].value,
+                row[3].value,
+                row[4].value,
+                row[5].value,
+                row[6].value,
+                row[7].value,
+                row[0].value,
+                )
+            print('MISC: ' + str(misc_households[row[1].value]))
+wb.close()
+
+## Add household to upload dict if name and match in current households
+for key, value in households.items():
+    if key in current_households and value[0] in current_households:
+        upload_households[key] = value
+        print(upload_households[key])
 
 ##################### Upload to Zeemaps #####################
 
