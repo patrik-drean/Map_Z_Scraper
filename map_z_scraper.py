@@ -146,7 +146,7 @@ pp = pprint.PrettyPrinter(indent=4)
 #     counter1 += 1
 #
 # ## Write to csv file
-# with open('data/map_data_backup.csv', 'w', newline='') as csvfile:
+# with open('data/backup/map_data_backup.csv', 'w', newline='') as csvfile:
 #     fieldnames = [
 #         'Location Code',
 #         'Name',
@@ -173,7 +173,7 @@ pp = pprint.PrettyPrinter(indent=4)
 #             })
 #
 # # Convert csv file to xlsx
-# merge_all_to_a_book(glob.glob("data/map_data_backup.csv"), "data/map_data.xlsx")
+# merge_all_to_a_book(glob.glob("data/backup/map_data_backup.csv"), "data/map_data.xlsx")
 
 ### For testing purposes ###
 households = []
@@ -247,10 +247,10 @@ wb.close()
 
 
 ### Add household to upload lists if name and match in current households
-
 for value in households:
     is_current_household = False
     is_misc_household = False
+
 
     # Check if household name and address is in the current household
     for current_value in current_households:
@@ -287,16 +287,13 @@ for misc_value in misc_households:
     # Find if prior residencies need to be deleted
     for upload_value in upload_households:
         if misc_value[2] == upload_value[2]:
-            print(upload_value[2])
-            print(misc_value[2])
             delete_households.append(misc_value)
             no_match = False
-            print(misc_value)
+
 
     # Add to official misc list if there was no match
     if no_match:
         upload_misc_households.append(misc_value)
-
 
 
 # TODO Don't know what this was for
@@ -315,7 +312,7 @@ add_counter = 0
 change_counter = 0
 delete_counter = 0
 
-with open('data/updated_map_data_backup.csv', 'w', newline='') as csvfile:
+with open('data/backup/updated_map_data_backup.csv', 'w', newline='') as csvfile:
     fieldnames = [
         'Location Code',
         'Name',
@@ -329,12 +326,6 @@ with open('data/updated_map_data_backup.csv', 'w', newline='') as csvfile:
     writer.writeheader()
 
     # Write each household to individual rows
-    print(len(add_households))
-    print(len(change_households))
-    print(len(delete_households))
-    print(len(upload_households))
-    print(len(upload_misc_households))
-    print()
     for value in add_households:
         writer.writerow({
             'Location Code': value[0],
@@ -405,7 +396,7 @@ with open('data/updated_map_data_backup.csv', 'w', newline='') as csvfile:
         csv_counter += 1
 
 # Format to xlsx file
-merge_all_to_a_book(glob.glob("data/updated_map_data_backup.csv"), "data/updated_map_data.xlsx")
+merge_all_to_a_book(glob.glob("data/backup/updated_map_data_backup.csv"), "data/updated_map_data.xlsx")
 
 ## Format colors for add, change, and delete households
 
@@ -448,7 +439,6 @@ print(add_counter)
 print(change_counter)
 print(delete_counter)
 print(csv_counter)
-
 
 # Save with color updates
 wb.save('data/updated_map_data.xlsx')
