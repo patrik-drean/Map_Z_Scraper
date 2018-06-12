@@ -10,7 +10,9 @@ from openpyxl import load_workbook
 from openpyxl.workbook import Workbook
 from openpyxl.styles import Font, Fill, PatternFill
 
-##################### Web scrape website #####################
+##########################
+### Web scrape website ###
+##########################
 
 timer = Timer()
 timer.start()
@@ -172,7 +174,6 @@ with open('data/backup/map_data_backup.csv', 'w', newline='') as csvfile:
 # Convert csv file to xlsx
 merge_all_to_a_book(glob.glob("data/backup/map_data_backup.csv"), "data/map_data.xlsx")
 
-### For testing purposes ###
 households = []
 # Load up new map data
 wb = load_workbook(filename='data/map_data.xlsx', read_only=True)
@@ -192,9 +193,11 @@ for index, row in enumerate(ws.rows):
             ))
 
 wb.close()
-### End test block ###
 
-##################### Compare map excel file data #####################
+###################################
+### Compare map excel file data ###
+###################################
+
 current_households = []
 misc_households = []
 
@@ -435,7 +438,10 @@ wb.save('data/updated_map_data.xlsx')
 print('\nThe pending changes can now be seen in the "updated_map_data.xlx" file.')
 print('To continue, press any key...')
 input()
-##################### Upload to Zeemaps #####################
+
+######################################
+### Upload to Zeemaps (Not Update) ###
+######################################
 
 ### For testing purposes ###
 # driver = webdriver.Firefox()
@@ -452,8 +458,7 @@ input()
 # # username = input('Enter username:')
 # # password = input('Enter password:')
 # WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'u_email')))
-# username = 'pdrean4@gmail.com'
-# password = 'Znephite44'
+
 #
 #
 # # Grab inputs
