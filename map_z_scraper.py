@@ -440,7 +440,7 @@ print('To continue, press any key...')
 input()
 
 ######################################
-### Upload to Zeemaps (Not Update) ###
+### Upload to Zeemaps (Not Updated) ###
 ######################################
 
 ### For testing purposes ###
