@@ -1,4 +1,4 @@
-import time, re, csv, glob, pprint, time
+import time, re, csv, glob, pprint, time, getpass
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait, Select
 from selenium.webdriver.common.by import By
@@ -9,8 +9,6 @@ from pyexcel.cookbook import merge_all_to_a_book
 from openpyxl import load_workbook
 from openpyxl.workbook import Workbook
 from openpyxl.styles import Font, Fill, PatternFill
-
-
 
 ##################### Web scrape website #####################
 
@@ -32,12 +30,9 @@ signin_button.click()
 
 
 # Prompt for login info
-# username = input('Enter username:')
-# password = input('Enter password:')
+username = input('Enter username: ')
+password = getpass.getpass('Enter password: ')
 WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'IDToken1')))
-username = 'pdrean4'
-password = 'Lnephite44'
-
 
 # Grab inputs
 username_input = driver.find_element_by_name("IDToken1")
@@ -180,23 +175,23 @@ merge_all_to_a_book(glob.glob("data/backup/map_data_backup.csv"), "data/map_data
 ### For testing purposes ###
 households = []
 # Load up new map data
-# wb = load_workbook(filename='data/map_data.xlsx', read_only=True)
-# ws = wb['map_data_backup.csv']
-#
-# for index, row in enumerate(ws.rows):
-#     if (index != 0):
-#         households.append((
-#             row[0].value,
-#             row[1].value,
-#             row[2].value,
-#             row[3].value,
-#             row[4].value,
-#             row[5].value,
-#             row[6].value,
-#             row[7].value,
-#             ))
-#
-# wb.close()
+wb = load_workbook(filename='data/map_data.xlsx', read_only=True)
+ws = wb['map_data_backup.csv']
+
+for index, row in enumerate(ws.rows):
+    if (index != 0):
+        households.append((
+            row[0].value,
+            row[1].value,
+            row[2].value,
+            row[3].value,
+            row[4].value,
+            row[5].value,
+            row[6].value,
+            row[7].value,
+            ))
+
+wb.close()
 ### End test block ###
 
 ##################### Compare map excel file data #####################
@@ -210,8 +205,8 @@ delete_households = []
 
 ## Load up current household information
 ##TODO will have to change worksheet on official map
-wb = load_workbook(filename='data/current_map_data.xlsx', read_only=True)
-ws = wb['compiled_data_1.2']
+wb = load_workbook(filename='data/current_map_data.xlsm', read_only=True)
+ws = wb.worksheets[0]
 
 for index, row in enumerate(ws.rows):
     # Skip header info
@@ -294,6 +289,13 @@ for misc_value in misc_households:
         upload_misc_households.append(misc_value)
 
 ## Upload to official upload excel sheet
+pp.pprint(add_households)
+print('*' * 80)
+pp.pprint(change_households)
+print('*' * 80)
+pp.pprint(delete_households)
+print('*' * 80)
+
 csv_counter = 0
 add_counter = 0
 change_counter = 0
